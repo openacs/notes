@@ -14,10 +14,11 @@
     </database-support>
         <owner url="mailto:vkurup@massmed.org">Vinod Kurup</owner>
         <owner>Rafael Schloming</owner>
-        <summary>A sample ACS Application that allows users to manage notes online.</summary>
+        <summary>Sample application for users to manage notes online.</summary>
         <release-date>2001-03-05</release-date>
         <vendor url="http://www.openacs.org/">OpenACS</vendor>
-        <description format="text/plain">This is a sample application for ACS 4.x.</description>
+        <description format="text/plain">This is a sample application for OpenACS 4.x to show how applications should be built, unfortunately it
+        has not kept pace with current best practices.</description>
 
         <requires url="acs-kernel" version="5.0d13"/>
         <requires url="acs-templating" version="4.1.2"/>
