@@ -7,7 +7,7 @@
 \i notes-sc-drop.sql 
 
 --drop functions
-drop function note__new (integer,integer,varchar,varchar,varchar,timestamp,integer,varchar,integer);
+drop function note__new (integer,integer,varchar,varchar,varchar,timestamptz,integer,varchar,integer);
 drop function note__delete (integer);
 drop function note__name (integer);
 

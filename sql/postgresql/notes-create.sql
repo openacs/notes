@@ -88,7 +88,7 @@ create table notes (
     body       varchar(1024)
 );
 
-create function note__new (integer,integer,varchar,varchar,varchar,timestamp,integer,varchar,integer)
+create function note__new (integer,integer,varchar,varchar,varchar,timestamptz,integer,varchar,integer)
 returns integer as '
 declare
   p_note_id					alias for $1;       -- default null
