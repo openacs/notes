@@ -1,9 +1,17 @@
---drop package note;
+--drop functions
 drop function note__new (integer,integer,varchar,varchar,varchar,timestamp,integer,varchar,integer);
 drop function note__delete (integer);
 
+--drop permissions
+delete from acs_permissions where object_id in (select note_id from notes);
+
+--drop objects
+delete from acs_objects where object_type='note';
+
+--drop table
 drop table notes;
 
+--drop attributes
 select acs_attribute__drop_attribute (
 	   'note',
 	   'TITLE'
@@ -15,10 +23,9 @@ select acs_attribute__drop_attribute (
 	);
 
 
---execute acs_object_type.drop_type('note');
+--drop type
 select acs_object_type__drop_type(
 	   'note',
 	   'f'
 	);
 
---show errors
