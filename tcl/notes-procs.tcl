@@ -9,7 +9,7 @@ ad_proc notes__datasource {
 	       n.body as content,
 	       'text/plain' as mime,
 	       '' as keywords,
-	       'text' as storage
+	       'text' as storage_type
 	from notes n
 	where note_id = :object_id
     } -column_array datasource
@@ -35,3 +35,10 @@ ad_proc notes__url {
 
     return $url
 }
+
+
+
+
+
+
+
