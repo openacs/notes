@@ -1,3 +1,14 @@
+--
+-- packages/notes/sql/notes-sc-create.sql
+--
+--
+-- This sets up the service contracts that make the text in notes
+-- available for indexing by the search package. See documentation 
+-- on the packages 'search' and 'acs-service-contract'.
+--
+--
+
+
 select acs_sc_impl__new(
 	   'FtsContentProvider',		-- impl_contract_name
            'note',				-- impl_name
