@@ -1,53 +1,3 @@
---
--- packages/notes/sql/notes-create.sql
---
--- @author rhs@mit.edu
--- @creation-date 2000-10-22
--- @cvs-id $Id$
---
-
-begin
-  acs_object_type.create_type (
-    supertype => 'acs_object',
-    object_type => 'note',
-    pretty_name => 'Note',
-    pretty_plural => 'Notes',
-    table_name => 'notes',
-    id_column => 'note_id',
-	name_method => 'note.name'
-  );
-end;
-/
-show errors;
-
-declare
-  attr_id acs_attributes.attribute_id%TYPE;
-begin
-  attr_id := acs_attribute.create_attribute (
-    object_type => 'note',
-    attribute_name => 'title',
-    pretty_name => 'Title',
-    pretty_plural => 'Titles',
-    datatype => 'string'
-  );
-
-  attr_id := acs_attribute.create_attribute (
-    object_type => 'note',
-    attribute_name => 'body',
-    pretty_name => 'Body',
-    pretty_plural => 'Bodies',
-    datatype => 'string'
-  );
-end;
-/
-show errors;
-
-create table notes (
-    note_id    integer references acs_objects(object_id) primary key,
-    title      varchar(255) not null,
-    body       varchar(4000)
-);
-
 create or replace package note
 as
     function new (
@@ -145,3 +95,5 @@ as
 end note;
 /
 show errors;
+
+alter table notes drop column owner_id;

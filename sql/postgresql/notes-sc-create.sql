@@ -33,21 +33,21 @@ select acs_sc_impl_alias__new(
 
 
 create function notes__itrg ()
-returns opaque as '
+returns trigger as '
 begin
     perform search_observer__enqueue(new.note_id,''INSERT'');
     return new;
 end;' language 'plpgsql';
 
 create function notes__dtrg ()
-returns opaque as '
+returns trigger as '
 begin
     perform search_observer__enqueue(old.note_id,''DELETE'');
     return old;
 end;' language 'plpgsql';
 
 create function notes__utrg ()
-returns opaque as '
+returns trigger as '
 begin
     perform search_observer__enqueue(old.note_id,''UPDATE'');
     return old;
@@ -62,8 +62,3 @@ for each row execute procedure notes__dtrg ();
 
 create trigger notes__utrg after update on notes
 for each row execute procedure notes__utrg (); 
-
-
-
-
-
