@@ -6,9 +6,9 @@
 
 <center>
 
-<table border=0 cellpadding=1 cellspacing=0 width=80%>
+<table border=0 cellpadding=1 cellspacing=0 width="80%">
 <tr><td bgcolor=#aaaaaa>
-<table border=0 cellpadding=3 cellspacing=0 width=100%>
+<table border=0 cellpadding=3 cellspacing=0 width="100%">
 <multiple name=notes>
 <if @notes.rownum@ odd>
   <tr bgcolor=#eeeeee>
@@ -17,7 +17,7 @@
   <tr bgcolor=#ffffff>
 </else>
 
-    <td valign=top width=1%>
+    <td valign=top width="1%">
       <if @notes.delete_p@ eq 1>
         <a href=delete?note_id=@notes.note_id@><img border=0 src=x alt=" [Delete] "></a>
       </if>
