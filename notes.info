@@ -17,7 +17,7 @@
         <summary>Sample application for users to manage notes online.</summary>
         <release-date>2001-03-05</release-date>
         <vendor url="http://openacs.org">OpenACS</vendor>
-        <description format="text/plain">This is a sample application for OpenACS 4.x to show how applications should be built, unfortunately it
+        <description format="text/plain">This is a sample application for OpenACS to show how applications should be built, unfortunately it
         has not kept pace with current best practices.</description>
 
         <provides url="notes" version="0.13d"/>
