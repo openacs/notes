@@ -13,7 +13,8 @@ begin
     pretty_name => 'Note',
     pretty_plural => 'Notes',
     table_name => 'NOTES',
-    id_column => 'NOTE_ID'
+    id_column => 'NOTE_ID',
+	name_method => 'NOTE.NAME'
   );
 end;
 /
@@ -68,6 +69,10 @@ as
     procedure delete (
          note_id      in notes.note_id%TYPE
     );
+
+	function name (
+		note_id			in notes.note_id%TYPE
+	) return notes.title%TYPE;
 end note;
 /
 show errors
@@ -128,6 +133,18 @@ as
          acs_object.delete(note_id);
      end delete;
 
+	 function name (
+		note_id			in notes.note_id%TYPE
+	 ) return notes.title%TYPE
+	 is
+		v_note_name		notes.title%TYPE;
+	 begin
+		select title into v_note_name
+			from notes
+			where note_id = name.note_id;
+
+		return v_note_name;
+	 end name;
 end note;
 /
 show errors;

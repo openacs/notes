@@ -9,6 +9,7 @@
 --drop functions
 drop function note__new (integer,integer,varchar,varchar,varchar,timestamp,integer,varchar,integer);
 drop function note__delete (integer);
+drop function note__name (integer);
 
 --drop permissions
 delete from acs_permissions where object_id in (select note_id from notes);

@@ -21,7 +21,7 @@ begin
 	null,				-- package_name
 	''f'',				-- abstract_p
 	null,				-- type_extension_table
-	null				-- name_method
+	''note.name''		-- name_method
 	);
 
     return 0;
@@ -144,14 +144,20 @@ begin
 
 end;' language 'plpgsql';
 
+create function note__name (integer)
+returns varchar as '
+declare
+    p_note_id      alias for $1;
+    v_note_name    notes.title%TYPE;
+begin
+	select title into v_note_name
+		from notes
+		where note_id = p_note_id;
+
+    return v_note_name;
+end;
+' language 'plpgsql';
+
 
 -- neophytosd
 \i notes-sc-create.sql
-
-
-
-
-
-
-
-
