@@ -1,3 +1,11 @@
+ad_library { 
+    Notes -- an implementation of  FtsContentProvider
+    
+    @author Neophytos Demetriou
+    @creation-date 2001-09-03
+    @cvs-id $Id$
+}
+
 ad_proc notes__datasource {
     object_id
 } {
