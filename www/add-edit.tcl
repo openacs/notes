@@ -10,7 +10,7 @@ ad_page_contract {
 	{title:html,notnull,optional ""}
 	{body ""}
 } -properties {
-	context_bar:onevalue
+	context:onevalue
 }
 
 set package_id [ad_conn package_id]
@@ -18,11 +18,11 @@ set package_id [ad_conn package_id]
 if {[info exists note_id]} {
 	ad_require_permission $note_id write
 
-	set context_bar [ad_context_bar "Edit Note"]
+	set context [list "Edit Note"]
 } else {
 	ad_require_permission $package_id create
 
-	set context_bar [ad_context_bar "New Note"]
+	set context [list "New Note"]
 }
 
 template::form create new_note
@@ -82,7 +82,7 @@ if [template::form is_valid new_note] {
     }
   }
 
-  ad_returnredirect "."
+  ad_returnredirect "./"
 }
 
 ad_return_template

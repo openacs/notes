@@ -1,9 +1,6 @@
 <master>
+<property name="title">@title@</property>
+<property name="context">@context@</property>
 
-@context_bar@
-
-<hr>
-
-<center>
 <formtemplate id="new_note"></formtemplate>
-</center>
+

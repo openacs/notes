@@ -1,10 +1,6 @@
 <master>
-
-@context_bar@
-
-<hr>
-
-<center>
+<property name="title">Notes</property>
+<property name="context">@context@</property>
 
 <table border=0 cellpadding=1 cellspacing=0 width="80%">
 <tr><td bgcolor=#aaaaaa>
@@ -71,5 +67,3 @@
 </table>
 </td><tr>
 </table>
-
-</center>

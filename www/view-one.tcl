@@ -4,12 +4,12 @@ ad_page_contract {
 } {
     note_id:integer,notnull
 } -properties {
-    context_bar:onevalue
+    context:onevalue
     title:onevalue
     body:onevalue
 }
 
-set context_bar [ad_context_bar]
+set context [list "One note"]
 
 db_1row note_select {
     select title, body

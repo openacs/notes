@@ -17,4 +17,4 @@ db_exec_plsql note_delete {
   end;
 }
 
-ad_returnredirect "."
+ad_returnredirect "./"

@@ -1,7 +1,5 @@
 <master>
-
-<h2>@title@</h2>
-@context_bar@
-<hr>
+<property name="title">@title@</property>
+<property name="context">@context@</property>
 
 @body@
