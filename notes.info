@@ -4,6 +4,7 @@
 <package key="notes" url="http://www.arsdgita.com/acs-repository/apm/packages/notes" type="apm_application">
     <package-name>Note</package-name>
     <pretty-plural>Notes</pretty-plural>
+    <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
 
     <version name="0.11d" url="http://www.arsdigita.com/acs-repository/download/apm/notes-0.11d.apm">
@@ -11,10 +12,11 @@
         <database>oracle</database>
         <database>postgresql</database>
     </database-support>
-        <owner url="mailto:rhs@mit.edu">Rafael Schloming</owner>
+        <owner url="mailto:vkurup@massmed.org">Vinod Kurup</owner>
+        <owner>Rafael Schloming</owner>
         <summary>A sample ACS Application that allows users to manage notes online.</summary>
         <release-date>2001-03-05</release-date>
-        <vendor url="http://www.arsdigita.com/">ArsDigita Corporation</vendor>
+        <vendor url="http://www.openacs.org/">OpenACS</vendor>
         <description format="text/plain">This is a sample application for ACS 4.x.</description>
 
         <requires url="acs-kernel" version="4.0"/>
