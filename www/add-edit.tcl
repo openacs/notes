@@ -6,11 +6,11 @@ ad_page_contract {
   @creation-date 2000-10-23
   @cvs-id $Id$
 } {
-  note_id:integer,notnull,optional
-  title:html,notnull,optional
-  {body ""}
+	note_id:integer,notnull,optional
+	{title:html,notnull,optional ""}
+	{body ""}
 } -properties {
-  context_bar:onevalue
+	context_bar:onevalue
 }
 
 set package_id [ad_conn package_id]
@@ -23,8 +23,6 @@ if {[info exists note_id]} {
 	ad_require_permission $package_id create
 
 	set context_bar [ad_context_bar "New Note"]
-
-	set title ""
 }
 
 template::form create new_note
