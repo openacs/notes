@@ -66,7 +66,7 @@ as
         context_id          in acs_objects.context_id%TYPE default null
     ) return notes.note_id%TYPE;
 
-    procedure delete (
+    procedure del (
          note_id      in notes.note_id%TYPE
     );
 
@@ -119,19 +119,19 @@ as
          return v_note_id;
      end new;
 
-     procedure delete (
+     procedure del (
          note_id      in notes.note_id%TYPE
      )
      is
      begin
 		 delete from acs_permissions
-		 where object_id = note.delete.note_id;
+		 where object_id = note.del.note_id;
          
          delete from notes
-         where note_id = note.delete.note_id;
+         where note_id = note.del.note_id;
 
-         acs_object.delete(note_id);
-     end delete;
+         acs_object.del(note_id);
+     end del;
 
 	 function name (
 		note_id			in notes.note_id%TYPE

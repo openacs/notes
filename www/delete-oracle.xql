@@ -7,7 +7,7 @@
       <querytext>
       
   begin
-    note.delete(:note_id);
+    note.del(:note_id);
   end;
 
       </querytext>

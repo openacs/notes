@@ -13,7 +13,7 @@ ad_require_permission $note_id delete
 
 db_exec_plsql note_delete {
   begin
-    note.delete(:note_id);
+    note.del(:note_id);
   end;
 }
 
