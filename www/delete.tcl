@@ -11,11 +11,8 @@ ad_page_contract {
 
 ad_require_permission $note_id delete
 
-db_dml note_delete {
+db_exec_plsql note_delete {
   begin
-    delete from acs_permissions
-    where object_id = :note_id;
-
     note.delete(:note_id);
   end;
 }

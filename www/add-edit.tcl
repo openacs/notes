@@ -66,7 +66,7 @@ if [template::form is_valid new_note] {
       where note_id = :note_id
     }
   } else {
-    db_dml new_note {
+    db_exec_plsql new_note {
       declare
         id integer;
       begin
@@ -77,12 +77,6 @@ if [template::form is_valid new_note] {
           creation_user => :user_id,
           creation_ip => :peeraddr,
           context_id => :package_id
-        );
-
-        acs_permission.grant_permission(
-          object_id => id,
-          grantee_id => :user_id,
-          privilege => 'admin'
         );
       end;
     }

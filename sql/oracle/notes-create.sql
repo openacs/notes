@@ -105,6 +105,12 @@ as
          values
           (v_note_id, owner_id, title, body);
 
+		 acs_permission.grant_permission(
+           object_id => v_note_id,
+           grantee_id => owner_id,
+           privilege => 'admin'
+         );
+
          return v_note_id;
      end new;
 
@@ -113,6 +119,9 @@ as
      )
      is
      begin
+		 delete from acs_permissions
+		 where object_id = note.delete.note_id;
+         
          delete from notes
          where note_id = note.delete.note_id;
 
