@@ -88,6 +88,4 @@ if [template::form is_valid new_note] {
   ad_returnredirect "./"
 }
 
-set title [ad_quotehtml $title]
-
 ad_return_template

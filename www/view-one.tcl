@@ -17,7 +17,6 @@ db_1row note_select {
     where note_id = :note_id
 }
 
-set title [ad_quotehtml $title]
 set body [ad_text_to_html -- $body]
 
 ad_return_template

@@ -29,7 +29,7 @@
         <table border=0 cellpadding=4 cellspacing=0>
 	  <tr>
 	    <td>&nbsp;</td>
-	    <td>@notes.body@</td>
+	    <td>@notes.body;noquote@</td>
 	  </tr>
 	</table>
     </td>

@@ -40,7 +40,6 @@ db_multirow notes notes {
   and acs_permission.permission_p(note_id, :user_id, 'read') = 't'
   order by creation_date
 } {
-  set title [ad_quotehtml $title]
   set body [ad_text_to_html -- $body]
 }
 
