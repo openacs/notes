@@ -38,14 +38,8 @@ end;' language 'plpgsql';
 create function notes__utrg ()
 returns opaque as '
 begin
-    insert into search_observer_queue (
-        object_id,
-	event
-    ) values (
-        old.note_id,
-        ''UPDATE''
-    );
-    return new;
+    perform search_observer__enqueue(old.note_id,''UPDATE'');
+    return old;
 end;' language 'plpgsql';
 
 
