@@ -7,7 +7,7 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>t</singleton-p>
 
-    <version name="0.11d" url="http://www.arsdigita.com/acs-repository/download/apm/notes-0.11d.apm">
+    <version name="0.12d" url="http://www.arsdigita.com/acs-repository/download/apm/notes-0.12d.apm">
     <database-support>
         <database>oracle</database>
         <database>postgresql</database>
@@ -19,7 +19,7 @@
         <vendor url="http://www.openacs.org/">OpenACS</vendor>
         <description format="text/plain">This is a sample application for ACS 4.x.</description>
 
-        <requires url="acs-kernel" version="4.6.2"/>
+        <requires url="acs-kernel" version="5.0d13"/>
         <requires url="acs-templating" version="4.1.2"/>
 
         <files>
