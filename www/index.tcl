@@ -41,7 +41,7 @@ db_multirow notes notes {
   order by creation_date
 } {
   set title [ad_quotehtml $title]
-  set body [ad_text_to_html $body]
+  set body [ad_text_to_html -- $body]
 }
 
 
