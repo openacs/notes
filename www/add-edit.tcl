@@ -1,28 +1,25 @@
 # packages/notes/www/add-edit.tcl
-
 ad_page_contract {
 
   @author rhs@mit.edu
   @creation-date 2000-10-23
   @cvs-id $Id$
 } {
-	note_id:integer,notnull,optional
-	{title:html,notnull,optional ""}
-	{body ""}
+    note_id:integer,notnull,optional
 } -properties {
-	context:onevalue
+    context:onevalue
 }
 
 set package_id [ad_conn package_id]
 
 if {[info exists note_id]} {
-	ad_require_permission $note_id write
+    ad_require_permission $note_id write
 
-	set context [list "Edit Note"]
+    set context [list "Edit Note"]
 } else {
-	ad_require_permission $package_id create
-
-	set context [list "New Note"]
+    ad_require_permission $package_id create
+    
+    set context [list "New Note"]
 }
 
 template::form create new_note
@@ -39,6 +36,9 @@ if {[template::form is_request new_note] && [info exists note_id]} {
     from notes
     where note_id = :note_id
   }
+} else { 
+    set title {}
+    set body {}
 }
 
 template::element create new_note title \
@@ -54,7 +54,10 @@ template::element create new_note body \
     -html { rows 10 cols 40 wrap soft } \
     -value $body
 
+
 if [template::form is_valid new_note] {
+  form get_values new_note title body
+
   set user_id [ad_conn user_id]
   set peeraddr [ad_conn peeraddr]
 
@@ -84,5 +87,7 @@ if [template::form is_valid new_note] {
 
   ad_returnredirect "./"
 }
+
+set title [ad_quotehtml $title]
 
 ad_return_template

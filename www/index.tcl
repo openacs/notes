@@ -39,6 +39,10 @@ db_multirow notes notes {
   and o.context_id = :package_id
   and acs_permission.permission_p(note_id, :user_id, 'read') = 't'
   order by creation_date
+} {
+  set title [ad_quotehtml $title]
+  set body [ad_text_to_html $body]
 }
+
 
 ad_return_template
