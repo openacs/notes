@@ -19,10 +19,10 @@
 
     <td valign=top width=1%>
       <if @notes.delete_p@ eq 1>
-        <a href=delete?note_id=@notes.note_id@><img border=0 src=x></a>
+        <a href=delete?note_id=@notes.note_id@><img border=0 src=x alt=" [Delete] "></a>
       </if>
       <else>
-        <img border=0 src=x-disabled>
+        <img border=0 src=x-disabled alt=" [Can't Delete] ">
       </else>
     </td>
     <td>&nbsp;
@@ -61,10 +61,10 @@
   <tr bgcolor=#aaaaaa>
     <td colspan=2 align=center>
     <if @create_p@ eq 1>
-      <a href=add-edit><img border=0 src=add></a>
+      <a href=add-edit><img border=0 src=add alt=" [Add] "></a>
     </if>
     <else>
-      <img border=0 src=add-disabled>
+      <img border=0 src=add-disabled alt=" [Can't Add Note] ">
     </else>
     </td>
   </tr>

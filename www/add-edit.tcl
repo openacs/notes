@@ -7,7 +7,7 @@ ad_page_contract {
   @cvs-id $Id$
 } {
   note_id:integer,notnull,optional
-  {title ""}
+  title:html,notnull,optional
   {body ""}
 } -properties {
   context_bar:onevalue
@@ -16,13 +16,15 @@ ad_page_contract {
 set package_id [ad_conn package_id]
 
 if {[info exists note_id]} {
-  ad_require_permission $note_id write
+	ad_require_permission $note_id write
 
-  set context_bar [ad_context_bar "Edit Note"]
+	set context_bar [ad_context_bar "Edit Note"]
 } else {
-  ad_require_permission $package_id create
+	ad_require_permission $package_id create
 
-  set context_bar [ad_context_bar "New Note"]
+	set context_bar [ad_context_bar "New Note"]
+
+	set title ""
 }
 
 template::form create new_note
