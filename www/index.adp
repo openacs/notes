@@ -26,12 +26,10 @@
       </else>
     </td>
     <td>&nbsp;
+        <a href=view-one?note_id=@notes.note_id@>@notes.title@</a>
       <if @notes.write_p@ eq 1>
-        <a href=add-edit?note_id=@notes.note_id@>@notes.title@</a>
+        [<a href=add-edit?note_id=@notes.note_id@>Edit</a>]
       </if>
-      <else>
-        @notes.title@
-      </else>
         <table border=0 cellpadding=4 cellspacing=0>
 	  <tr>
 	    <td>&nbsp;</td>

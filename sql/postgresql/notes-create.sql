@@ -144,3 +144,14 @@ begin
 
 end;' language 'plpgsql';
 
+
+-- neophytosd
+\i notes-sc-create.sql
+
+
+
+
+
+
+
+
