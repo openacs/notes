@@ -1,6 +1,6 @@
 <master>
-<property name="title">@title@</property>
+<property name="title">@page_title@</property>
 <property name="context">@context;noquote@</property>
 
-<formtemplate id="new_note"></formtemplate>
+<formtemplate id="add-edit"></formtemplate>
 

@@ -11,10 +11,6 @@ ad_page_contract {
 
 ad_require_permission $note_id delete
 
-db_exec_plsql note_delete {
-  begin
-    note.del(:note_id);
-  end;
-}
+package_exec_plsql -var_list [list [list note_id $note_id]] note del
 
 ad_returnredirect "./"
