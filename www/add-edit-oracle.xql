@@ -17,6 +17,7 @@
           creation_ip => :peeraddr,
           context_id => :package_id
         );
+	  end;
 
       </querytext>
 </fullquery>
