@@ -26,7 +26,7 @@ ad_form -form {
 
     # The "note" object type's key
 
-    {note_id:key}
+    note_id:key
 
     # "title" is of type text and will use a "text" widget.
 
