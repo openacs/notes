@@ -1,6 +1,6 @@
 <master>
 <property name="title">Notes</property>
-<property name="context">@context@</property>
+<property name="context">@context;noquote@</property>
 
 <table border=0 cellpadding=1 cellspacing=0 width="80%">
 <tr><td bgcolor=#aaaaaa>
