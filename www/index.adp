@@ -29,12 +29,7 @@
         <table border=0 cellpadding=4 cellspacing=0>
 	  <tr>
 	    <td>&nbsp;</td>
-	    <td>
-	    <%
-	    regsub -all "\n" $notes(body) "<br>" body
-	    adp_puts $body
-	    %>
-	    </td>
+	    <td>@notes.body@</td>
 	  </tr>
 	</table>
     </td>

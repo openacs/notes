@@ -7,8 +7,8 @@ ad_page_contract {
   @cvs-id $Id$
 } {
 	note_id:integer,notnull,optional
-	{title:html,notnull,optional ""}
-	{body ""}
+	{title:trim,notnull,optional ""}
+	{body:trim ""}
 } -properties {
 	context:onevalue
 }
@@ -84,5 +84,7 @@ if [template::form is_valid new_note] {
 
   ad_returnredirect "./"
 }
+
+set title [ad_quotehtml $title]
 
 ad_return_template
