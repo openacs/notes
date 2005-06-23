@@ -5,13 +5,13 @@
   <fullquery name="notes">      
     <querytext>
 
-      select note_id, title, body,
+      select note_id, n.title, body,
              case when acs_permission__permission_p(note_id,:user_id,'write')='t' 
                   then 1 else 0 end as write_p,
              case when acs_permission__permission_p(note_id,:user_id,'admin')='t'
-    			  then 1 else 0 end as admin_p,
+         then 1 else 0 end as admin_p,
              case when acs_permission__permission_p(note_id,:user_id,'delete')='t'
-    			  then 1 else 0 end as delete_p
+         then 1 else 0 end as delete_p
       from notes n, acs_objects o
       where n.note_id = o.object_id
         and o.context_id = :package_id
