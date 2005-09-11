@@ -5,7 +5,7 @@
   <fullquery name="notes">      
     <querytext>
 
-      select note_id, title, body,
+      select n.note_id, n.title, n.body,
              case when acs_permission__permission_p(note_id,:user_id,'write')='t' 
                   then 1 else 0 end as write_p,
              case when acs_permission__permission_p(note_id,:user_id,'admin')='t'
